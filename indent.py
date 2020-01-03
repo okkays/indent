@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """Formats data based on parens, brackets, and braces.  Splits on commas."""
 from __future__ import print_function
 
