@@ -1,4 +1,4 @@
-# Indent
+# Indent [![Build Status](https://travis-ci.org/okkays/indent.svg?branch=master)](https://travis-ci.org/okkays/indent) [![codecov](https://codecov.io/gh/okkays/indent/branch/master/graph/badge.svg)](https://codecov.io/gh/okkays/indent)
 
 Takes a line of arbitrary text, and greedily applies line breaks and indentation
 to it.
