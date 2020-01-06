@@ -36,12 +36,10 @@ Braces don't line up, or the formatting's weird?  Not my problem!
 
 # Testing
 
-Get coverage:
-
-1. `pip install -r requirements.txt`
+1. Get the deps: `pip install -r requirements-dev.txt`
 2. Run the tests, with something like:
 
 ```bash
-ls | entr -s 'coverage run -m unittest indent_test && coverage report'
+ls | entr -s 'coverage run -m pytest indent_test && coverage report'
 ```
 
