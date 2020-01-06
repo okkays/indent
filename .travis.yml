@@ -4,3 +4,5 @@ python:
   - "3.8"
 # command to run tests
 script: pytest
+after_success:
+  - codecov
