@@ -14,6 +14,15 @@ WRAPPERS = {
 SPLITTERS = [","]
 
 
+def _is_start_of_line(text):
+  for last_char in reversed(text):
+    if last_char == "\n":
+      return True
+    if last_char not in string.whitespace:
+      return False
+  return True
+
+
 def indent(to_indent, wrappers=None, splitters=None, indent_by="  "):
   """Indents and dedents given wrappers and indent_by."""
   if wrappers is None:
@@ -28,14 +37,7 @@ def indent(to_indent, wrappers=None, splitters=None, indent_by="  "):
         indent_level -= 1
       formatted_data += ("\n{}{}\n".format(indent_by * indent_level, char))
     else:
-      is_start_of_line = True
-      for last_char in reversed(formatted_data):
-        if last_char == "\n":
-          break
-        if last_char not in string.whitespace:
-          is_start_of_line = False
-          break
-      if not is_start_of_line or char not in string.whitespace:
+      if not _is_start_of_line(formatted_data) or char not in string.whitespace:
         formatted_data += char
     if char in splitters:
       formatted_data += ("\n")
